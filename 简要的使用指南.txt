@@ -1,0 +1,35 @@
+/* autor: H.S.Wang
+    date: 2020.7.10
+    email: wanghs@smail.nju.edu.cn
+    Thanks Piotr A. Dybczynski, Astronomical Observatory of the A. Mickiewicz Universty, for offering this code and 
+YuanxinPan, Wuhan university, uploading this code to Github.
+    The source of code can be find "https://github.com/YuanxinPan/de405"
+    */
+
+
+运行指南
+1.创立C语言工程文件
+2.将jplbin.h加入头文件目录
+3.将testeph.c加入源文件目录
+4.直接运行（相关测试文件和数据文件均已加载在根目录之中，这里采用的是DE405）
+5.若出现报错“error C4996: 'fopen': This function or variable may be unsafe.”
+解决方案：项目----》 XX属性 ----》C++  --->预处理器 ---》在预处理器定义添加“_CRT_SECURE_NO_WARNINGS”
+
+修改指南
+
+testeph.c文件中的main函数
+
+66行：测试文件名称
+67行：合并后的二进制历表数据文件
+73行：KM为是否以km作为单位，是则为1，否则为0
+160行：观测儒略日
+162行：位置速度插值子程序 pleph ( et, ntarg, ncent, r )
+	et: 观测时刻儒略日
+	ntarg: 目标天体
+	ncent: 中心天体
+	r: 输出的位置速度
+
+
+
+
+
